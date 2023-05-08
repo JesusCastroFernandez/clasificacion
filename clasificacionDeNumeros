@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int positivos = 0, negativos = 0, ceros = 0;
+        double sumaPositivos = 0, sumaNegativos = 0, sumaTotal = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.print("Introduce el número " + i + ": ");
+            int num = input.nextInt();
+
+            if (num > 0) {
+                positivos++;
+                sumaPositivos += num;
+            } else if (num < 0) {
+                negativos++;
+                sumaNegativos += num;
+            } else {
+                ceros++;
+            }
+
+            sumaTotal += num;
+        }
+
+        double mediaPositivos = sumaPositivos / positivos;
+        double mediaNegativos = sumaNegativos / negativos;
+        double mediaTotal = sumaTotal / 10;
+
+        System.out.println("Positivos: " + positivos);
+        System.out.println("Negativos: " + negativos);
+        System.out.println("Ceros: " + ceros);
+
+        System.out.println("Suma de los positivos: " + sumaPositivos);
+        System.out.println("Media de los positivos: " + mediaPositivos);
+
+        System.out.println("Suma de los negativos: " + sumaNegativos);
+        System.out.println("Media de los negativos: " + mediaNegativos);
+
+        System.out.println("Suma total: " + sumaTotal);
+        System.out.println("Media total: " + mediaTotal);
+    }
+}
